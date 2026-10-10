@@ -22,7 +22,7 @@ const setTheme = theme => {
     themeToggle.querySelector('.theme-label').textContent = isDark ? 'Light' : 'Dark';
   }
 };
-setTheme(document.documentElement.dataset.theme || 'light');
+setTheme(document.documentElement.dataset.theme || 'dark');
 themeToggle?.addEventListener('click', () => setTheme(document.documentElement.dataset.theme === 'dark' ? 'light' : 'dark'));
 const observer = new IntersectionObserver(entries => entries.forEach(entry => {
   if (entry.isIntersecting) { entry.target.classList.add('visible'); observer.unobserve(entry.target); }
